@@ -25,9 +25,11 @@ namespace InMemoryApp.Web.Controllers
             //{
                 MemoryCacheEntryOptions options = new MemoryCacheEntryOptions();
 
-                //options.AbsoluteExpiration = DateTime.Now.AddSeconds(10); //zaman isminde key oluştuğu zaman burada belirtilen süre kadar cache de kalacak
+            options.AbsoluteExpiration = DateTime.Now.AddSeconds(10); //zaman isminde key oluştuğu zaman burada belirtilen süre kadar cache de kalacak
 
-                options.SlidingExpiration = TimeSpan.FromSeconds(10); //zaman isminde key oluştuğu zaman burada belirtilen süre kadar cache de kullanılmadığı sürece cache de kalacak
+            options.SlidingExpiration = TimeSpan.FromSeconds(10); //zaman isminde key oluştuğu zaman burada belirtilen süre kadar cache de kullanılmadığı sürece cache de kalacak
+
+            options.Priority = CacheItemPriority.High; //cache de yer kalmadığında bu keyi silme önceliği high silme low ilk bunu sil neverremove asla silme normal ise high ile low arasında önceliği var
 
             _memoryCache.Set<string>("zaman", DateTime.Now.ToString(),options);
             //}
