@@ -5,26 +5,29 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddSingleton<RedisService>(sp=> new RedisService(builder.Configuration));
+builder.Services.AddSingleton<RedisService>();
 
 var app = builder.Build();
 
-RedisService redisService = app.Services.GetRequiredService<RedisService>();
-
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+using (var serviceScope = app.Services.CreateScope())
 {
-    app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
+    var services = serviceScope.ServiceProvider;
+    var redisService = services.GetRequiredService<RedisService>();
+    redisService.Connect();
 }
+
+    // Configure the HTTP request pipeline.
+    if (!app.Environment.IsDevelopment())
+    {
+        app.UseExceptionHandler("/Home/Error");
+        // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+        app.UseHsts();
+    }
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
-redisService.Connect();
 
 app.UseAuthorization();
 
