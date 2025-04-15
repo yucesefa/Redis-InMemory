@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IDistributedCacheRedisApp.W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisExchangeAPI.Web", "RedisExchangeAPI.Web\RedisExchangeAPI.Web.csproj", "{9402A143-FB5F-4A76-A5FD-E81D9D76CCA2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisExampleApp.API", "RedisExampleApp.API\RedisExampleApp.API.csproj", "{7C758FDC-08B6-45C7-A857-E844DA3F688B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisExampleApp.Cache", "RedisExampleApp.Cache\RedisExampleApp.Cache.csproj", "{C33CB5E7-EED1-4268-90BD-473A01B219C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{9402A143-FB5F-4A76-A5FD-E81D9D76CCA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9402A143-FB5F-4A76-A5FD-E81D9D76CCA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9402A143-FB5F-4A76-A5FD-E81D9D76CCA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C758FDC-08B6-45C7-A857-E844DA3F688B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C758FDC-08B6-45C7-A857-E844DA3F688B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C758FDC-08B6-45C7-A857-E844DA3F688B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C758FDC-08B6-45C7-A857-E844DA3F688B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C33CB5E7-EED1-4268-90BD-473A01B219C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C33CB5E7-EED1-4268-90BD-473A01B219C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C33CB5E7-EED1-4268-90BD-473A01B219C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C33CB5E7-EED1-4268-90BD-473A01B219C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
